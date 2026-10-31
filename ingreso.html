@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingreso | Panadería Archi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/ingreso.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="marca" href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" /><h2>archi</h2></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a  href="pedido.html">Pedido</a></li>
+        </ul>
+        <ul>
+          <li><a class="activo" href="ingreso.html">Acceso empleados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="contenedor">
+      <main>
+        <section>
+          <article class="login">
+            <h1>Ingreso de empleados</h1>
+            <p>Usa tu correo y contraseña de empleado para entrar al panel de pedidos.</p>
+            <form id="form-login">
+              <label for="correo">Correo de empleado</label>
+              <input type="email" id="correo" placeholder="nombre@archipanaderia.com" required />
+              <label for="clave">Contraseña de empleado</label>
+              <input type="password" id="clave" required />
+              <p id="error" class="error" hidden>Correo o contraseña incorrectos. Revisa los datos e inténtalo de nuevo.</p>
+              <button type="submit">Ingresar al panel</button>
+            </form>
+          </article>
+        </section>
+      </main>
+      <aside>
+        <article>
+          <h1>Zona del personal</h1>
+          <p>Desde el panel podrás ver los pedidos, marcarlos como atendidos y controlar el stock de panes.</p>
+        </article>
+      </aside>
+    </div>
+    <footer>
+      <article>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" />
+        <h2>archi</h2>
+        <p>Masa madre, fermentación pausada e ingredientes puros.</p>
+      </article>
+      <article>
+        <h2>Horarios de horneo</h2>
+        <p>Martes a Sábado: 07:00–20:00</p>
+        <p>Domingos: 08:30–15:00</p>
+        <p>Lunes: cerrado por descanso de masa</p>
+      </article>
+      <article>
+        <h2>Contacto</h2>
+        <a href="mailto:pedidos@archipanaderia.com">pedidos@archipanaderia.com</a>
+        <p>Teléfono: 996-254-148</p>
+        <p>Jirón Cusco 248, Huancayo 12001</p>
+        <p>&copy; archi Panadería & Pastelería</p>
+      </article>
+    </footer>
+    <script src="js/datos.js"></script>
+    <script src="js/ingreso.js"></script>
+  </body>
+</html>

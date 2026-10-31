@@ -1,0 +1,29 @@
+/* admin.css → estilos SOLO del panel de administración */
+
+/* Fila con las 3 tarjetas de resumen */
+.resumen { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; background: var(--espresso) !important; }
+.dato { background: rgba(255,255,255,.08); border-radius: 14px; padding: 18px; color: var(--miga); }
+.dato span { display: block; font-size: .9rem; }
+.dato strong { font-family: "Fraunces", serif; font-size: 2rem; color: #fff; }
+
+/* Tablas: .scroll deja deslizar la tabla en celulares sin romper la página */
+.scroll { overflow-x: auto; margin-top: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+th { text-align: left; background: var(--miga); padding: 10px 12px; font-weight: 600; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--miga); vertical-align: top; }
+tbody tr:hover { background: #fff8ea; }
+td small { color: #7b6552; display: block; }
+
+/* Etiquetas de estado */
+.estado { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+.estado.pendiente { background: #fde7b8; color: #7a4b00; }
+.estado.atendido { background: #dcefc9; color: #2f5a14; }
+.bajo { color: var(--mermelada); font-weight: 600; }      /* stock bajo (menos de 5) */
+td button { padding: 5px 14px; margin-top: 6px; font-size: .85rem; }
+
+.fila-form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 14px; align-items: end; }
+.fila-form button { margin-bottom: 2px; }
+aside form button { width: 100%; margin-top: 18px; }
+aside small { display: block; margin-top: 4px; color: #7b6552; }
+aside article { position: sticky; top: 100px; }
+@media (max-width: 700px) { .fila-form { grid-template-columns: 1fr; } }

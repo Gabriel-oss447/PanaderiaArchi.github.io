@@ -1,0 +1,100 @@
+/* ============================================================
+   base.css → estilos que se repiten en TODAS las páginas:
+   colores, tipografía, header/nav, footer, botones y la
+   estructura HTML5 (header → .contenedor[main + aside] → footer).
+   Cada página añade después su propio CSS (index.css, pedido.css...).
+   ============================================================ */
+
+/* Variables CSS: guardamos los colores una vez y los usamos con var(--nombre) */
+:root {
+  --espresso: #34190f;   /* corteza oscura: header y footer */
+  --corteza:  #8a4b1f;   /* marrón horneado */
+  --trigo:    #d79a2b;   /* dorado de trigo: botones y detalles */
+  --harina:   #f7f0e3;   /* fondo general */
+  --miga:     #efdcb8;   /* miga clara */
+  --mermelada:#a3312b;   /* rojo mermelada: avisos y acentos */
+  --texto:    #3a2417;
+  --sombra:   0 8px 24px rgba(52, 25, 15, .12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }   /* tu reset original */
+
+body {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  background: var(--harina);
+  color: var(--texto);
+  line-height: 1.55;
+}
+h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; }
+h1 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 12px; }
+img { max-width: 100%; }
+
+/* ---------- HEADER + NAV (parte superior de la web) ---------- */
+header { background: var(--espresso); position: sticky; top: 0; z-index: 20; box-shadow: var(--sombra); }
+nav {
+  display: grid;                                   /* como tu header original */
+  grid-template-columns: auto 1fr auto;            /* logo | enlaces | acceso */
+  align-items: center; gap: 16px;
+  max-width: 1300px; margin: 0 auto; padding: 8px 24px;
+}
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca img { height: 56px; border-radius: 50%; border: 2px solid var(--trigo); }
+.marca h2 { color: var(--miga); font-size: 1.7rem; font-style: italic; }
+nav ul { list-style: none; display: flex; flex-direction: row; justify-content: space-around; gap: 6px; }
+nav li { padding: 4px; }
+nav a { display: block; padding: 8px 16px; border-radius: 999px; text-decoration: none; color: #e9dccb; transition: .2s; }
+nav a:hover, nav a.activo { background: var(--trigo); color: var(--espresso); }   /* hover como tu li:hover */
+
+/* ---------- CONTENEDOR: main (principal) + aside (secundario) ---------- */
+.contenedor {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(290px, 1fr);   /* main ocupa el doble que aside */
+  gap: 24px; align-items: start;
+  max-width: 1300px; margin: 0 auto; padding: 24px;
+}
+main section { display: flex; flex-direction: column; gap: 24px; }
+aside { display: flex; flex-direction: column; gap: 24px; }
+/* Cada <article> es una "tarjeta" blanca */
+main article, aside article {
+  background: #fff; border-radius: 18px; padding: 28px;
+  box-shadow: var(--sombra); border-top: 5px solid var(--trigo);
+}
+aside article:nth-child(even) { border-top-color: var(--corteza); }
+
+/* ---------- FOOTER (contenido terciario) ---------- */
+footer {
+  background: var(--espresso); color: #d9c9b6;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px; padding: 48px max(24px, calc((100% - 1252px) / 2));
+}
+footer h2 { color: var(--trigo); font-size: 1.1rem; margin-bottom: 10px; }
+footer img { height: 70px; border-radius: 50%; }
+footer a { color: var(--miga); text-decoration: underline; }
+
+/* ---------- BOTONES y FORMULARIOS ---------- */
+button {
+  cursor: pointer; border: 0; border-radius: 999px; padding: 10px 22px;
+  background: var(--corteza); color: #fff; font: 600 .95rem "DM Sans", sans-serif;
+  transition: background .2s, transform .2s;
+}
+button:hover { background: var(--mermelada); transform: translateY(-2px); }
+button.claro { background: var(--miga); color: var(--espresso); }
+button.claro:hover, button.claro.activo { background: var(--trigo); }
+label { display: block; font-weight: 600; margin: 14px 0 4px; }
+input, select, textarea {
+  width: 100%; padding: 10px 14px; border: 2px solid var(--miga); border-radius: 12px;
+  font: inherit; background: #fffdf8; color: var(--texto);
+}
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--trigo); outline-offset: 2px;
+}
+.vacio { color: #8c7a69; font-style: italic; list-style: none; }
+
+/* ---------- RESPONSIVE: celular y tablet (como tu @media original) ---------- */
+@media (max-width: 900px) {
+  .contenedor { grid-template-columns: 1fr; }   /* main y aside uno debajo del otro */
+}
+@media (max-width: 700px) {
+  nav { grid-template-columns: 1fr; justify-items: center; }
+  nav ul { flex-direction: column; align-items: center; }
+}

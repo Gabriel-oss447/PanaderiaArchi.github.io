@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panadería Archi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <!-- base.css = estilos comunes · index.css = estilos solo de esta página -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- HEADER: parte superior de la web, con el nav dentro -->
+    <header>
+      <nav>
+        <a class="marca" href="index.html">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" />
+          <h2>archi</h2>
+        </a>
+        <ul>
+          <li><a class="activo" href="index.html">Inicio</a></li>
+          <li><a href="pedido.html">Pedido</a></li>
+        </ul>
+        <ul>
+          <li><a href="ingreso.html">Acceso empleados</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contenedor">
+      <!-- MAIN: contenido principal. SECTION agrupa los ARTICLE -->
+      <main>
+        <section>
+          <article class="hero">
+            <h1>El arte del pan de masa madre horneado diario en archi</h1>
+            <h4>Elaborado con harinas puras molidas a la piedra, paciencia absoluta de 36 horas y el latido de nuestro fermento madre cultivado con devoción.</h4>
+            <a href="pedido.html"><button type="button">Hacer un pedido</button></a>
+            <a href="#historia"><button type="button" class="claro">Nuestra historia, 10 años</button></a>
+            <ul class="datos">
+              <li><strong>36 h</strong><p>Fermentación lenta</p></li>
+              <li><strong>100%</strong><p>Orgánico, harinas molidas en piedra</p></li>
+              <li><strong>10 años</strong><p>Madre fermento</p></li>
+              <li><strong>Horno de piso</strong><p>Corteza caramelo intensa</p></li>
+            </ul>
+          </article>
+
+          <article id="historia">
+            <h1>Diez años cuidando un fermento vivo que transforma granos nobles en pan puro.</h1>
+            <p>En archi no existen atajos ni aditivos químicos. Nuestra historia comenzó en 2015 en un pequeño obrador del barrio con un solo saco de trigo serrano andino, agua mineral pura y una pizca de paciencia infinita.</p>
+            <p>Hoy, nuestra masa madre bautizada como "Solera" cumple una década alimentada a diario a temperatura controlada, confiriendo a cada hogaza ese sabor acídulo elegante, miga elástica perlada y una gran digestibilidad.</p>
+            <div class="fotos">
+              <img src="https://img.magnific.com/foto-gratis/retrato-polvo-panadero-sexo-masculino-amasa-masa-harina-contador-cocina_23-2147883590.jpg?semt=ais_hybrid&w=740&q=80" alt="Persona amasando" />
+              <img src="https://farm1.staticflickr.com/265/31799785084_71505685d0_o.jpg" alt="Pan de masa madre" />
+            </div>
+          </article>
+
+          <article>
+            <h1>Catálogo de Obrador & Especialidades</h1>
+            <p>Selecciona tus postres favoritos así como tus panes. Puedes agregarlos a la canasta para retiro en mostrador o despacho inmediato.</p>
+            <div class="filtros">
+              <button type="button" class="claro activo filtro" data-cat="todos">Todos los productos</button>
+              <button type="button" class="claro filtro" data-cat="rustica">Masa Madre Rústica</button>
+              <button type="button" class="claro filtro" data-cat="pasteles">Pasteles & Dulces</button>
+            </div>
+            <!-- Las tarjetas las dibuja index.js leyendo el catálogo guardado -->
+            <div id="catalogo" class="catalogo"></div>
+          </article>
+        </section>
+      </main>
+
+      <!-- ASIDE: contenido secundario -->
+      <aside>
+        <article>
+          <h1>Canasta de Compras</h1>
+          <h4>Tu Pedido archi</h4>
+          <ul id="lista-canasta" class="canasta"></ul>
+          <div class="fila-total"><span>Subtotal</span><span id="subtotal">S/. 0.00</span></div>
+          <div class="fila-total grande"><span>Total Estimado</span><span id="total">S/. 0.00</span></div>
+          <button type="button" id="btn-pedido">Realizar Pedido</button>
+          <button type="button" id="btn-vaciar" class="claro">Vaciar Canasta</button>
+        </article>
+
+        <article>
+          <h1>Retiro de Mostrador</h1>
+          <p>Retira tu pedido en nuestro obrador de lunes a viernes de 8:00 am a 6:00 pm y sábados de 8:00 am a 1:00 pm.</p>
+          <h3>Dirección</h3>
+          <p>Jirón Cusco 248, Huancayo 12001</p>
+          <iframe title="Mapa de la panadería" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d410.11433730526363!2d-75.20585754234025!3d-12.065036505976966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964be8811e6d%3A0xee7832d65d133065!2sPasteler%C3%ADa%20Archi!5e0!3m2!1ses!2spe!4v1793147211213!5m2!1ses!2spe" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </article>
+
+        <article>
+          <h1>Despacho en Huancayo</h1>
+          <p>Llegamos a Sapallanga, Chupaca y Concepción en dos ventanas de reparto.</p>
+          <ul class="ventanas">
+            <li>Ventana 1: entregas 09:00–12:00 hrs</li>
+            <li>Ventana 2: entregas 16:30–19:30 hrs</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+
+    <!-- FOOTER: contenido terciario -->
+    <footer>
+      <article>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" />
+        <h2>archi</h2>
+        <p>Masa madre, fermentación pausada e ingredientes puros. Elaboración diaria de panes, pasteles y bocaditos de pastelería de especialidad.</p>
+      </article>
+      <article>
+        <h2>Horarios de horneo</h2>
+        <p>Martes a Sábado: 07:00–20:00</p>
+        <p>Domingos: 08:30–15:00</p>
+        <p>Lunes: cerrado por descanso de masa</p>
+      </article>
+      <article>
+        <h2>Dirección & retiro</h2>
+        <p>Jirón Cusco 248, Huancayo 12001</p>
+        <p>Mostrador de retiro y cafetería</p>
+      </article>
+      <article>
+        <h2>Contacto</h2>
+        <a href="mailto:pedidos@archipanaderia.com">pedidos@archipanaderia.com</a>
+        <p>Teléfono: 996-254-148</p>
+        <p>&copy; archi Panadería & Pastelería. Todos los derechos reservados.</p>
+      </article>
+    </footer>
+
+    <script src="js/datos.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

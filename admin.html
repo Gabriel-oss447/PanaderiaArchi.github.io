@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel admin | Panadería Archi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="marca" href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" /><h2>archi</h2></a>
+        <ul>
+          <li><a class="activo" href="admin.html">Panel admin</a></li>
+          <li><a href="index.html">Ver la web</a></li>
+        </ul>
+        <ul>
+          <li><button type="button" id="btn-salir" class="claro">Cerrar sesión</button></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="contenedor">
+      <main>
+        <section>
+          <!-- Resumen en una sola fila -->
+          <article class="resumen">
+            <div class="dato"><span>Pedidos recibidos</span><strong id="n-pedidos">0</strong></div>
+            <div class="dato"><span>Pedidos atendidos</span><strong id="n-atendidos">0</strong></div>
+            <div class="dato"><span>Total de ingresos</span><strong id="n-ingresos">S/. 0.00</strong></div>
+          </article>
+
+          <article>
+            <h1>Pedidos de clientes</h1>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>N°</th><th>Cliente</th><th>Panes y cantidades</th><th>Envío</th><th>Total</th><th>Estado</th></tr></thead>
+                <tbody id="tabla-pedidos"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article>
+            <h1>Catálogo panes</h1>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Pan</th><th>Ingredientes</th><th>Precio</th></tr></thead>
+                <tbody id="tabla-catalogo"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article>
+            <h1>Control de stock de panes</h1>
+            <form id="form-stock" class="fila-form">
+              <div><label for="stock-pan">Pan</label><select id="stock-pan" required></select></div>
+              <div><label for="stock-cant">Cantidad a añadir</label><input type="number" id="stock-cant" min="1" required /></div>
+              <button type="submit">Añadir al stock</button>
+            </form>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Pan</th><th>Stock actual</th></tr></thead>
+                <tbody id="tabla-stock"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside>
+        <article>
+          <h1>Añadir pan al catálogo</h1>
+          <p>El pan aparecerá en el catálogo de la página principal.</p>
+          <form id="form-pan">
+            <label for="p-nombre">Nombre del pan</label>
+            <input type="text" id="p-nombre" required />
+            <label for="p-ingredientes">Ingredientes</label>
+            <textarea id="p-ingredientes" rows="3" required></textarea>
+            <label for="p-precio">Precio (S/.)</label>
+            <input type="number" id="p-precio" min="0.1" step="0.10" required />
+            <label for="p-categoria">Categoría</label>
+            <select id="p-categoria">
+              <option value="rustica">Masa Madre Rústica</option>
+              <option value="pasteles">Pasteles & Dulces</option>
+            </select>
+            <label for="p-imagen">Nombre de la imagen</label>
+            <input type="text" id="p-imagen" placeholder="imagenPan4.jpg" required />
+            <small>Guarda la foto en <b>assets/panes/</b> y escribe aquí su nombre exacto.</small>
+            <label for="p-stock">Stock inicial</label>
+            <input type="number" id="p-stock" min="0" value="10" required />
+            <button type="submit">Guardar pan</button>
+          </form>
+        </article>
+      </aside>
+    </div>
+
+    <footer>
+      <article><h2>archi · panel interno</h2><p>Solo para empleados autorizados.</p></article>
+      <article><h2>Contacto</h2><p>Teléfono: 996-254-148</p><p>&copy; archi Panadería & Pastelería</p></article>
+    </footer>
+
+    <script src="js/datos.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

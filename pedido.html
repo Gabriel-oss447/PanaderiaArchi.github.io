@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido | Panadería Archi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pedido.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="marca" href="index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" /><h2>archi</h2></a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="activo" href="pedido.html">Pedido</a></li>
+        </ul>
+        <ul>
+          <li><a href="ingreso.html">Acceso empleados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="contenedor">
+      <main>
+        <section>
+          <!-- form="form-pedido" en el botón de abajo permite enviar este formulario desde el aside -->
+          <form id="form-pedido">
+            <article>
+              <h1>Haz tu pedido</h1>
+              <p>Completa tus datos y elige tus panes. Te confirmaremos por teléfono.</p>
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: María Quispe" required />
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="9 dígitos" pattern="[0-9]{9}" title="Escribe 9 números" required />
+            </article>
+
+            <article>
+              <h1>Elige tus panes</h1>
+              <div id="lista-panes"></div>
+            </article>
+
+            <article>
+              <h1>Tipo de envío</h1>
+              <div class="opciones">
+                <label class="opcion"><input type="radio" name="envio" value="domicilio" required /> A domicilio</label>
+                <label class="opcion"><input type="radio" name="envio" value="tienda" /> Recojo en tienda</label>
+              </div>
+
+              <!-- Solo aparece si elige "A domicilio" -->
+              <div id="bloque-domicilio" hidden>
+                <label for="direccion">Dirección de entrega</label>
+                <input type="text" id="direccion" placeholder="Calle, número y referencia" />
+                <label for="ventana">Horario de reparto</label>
+                <select id="ventana">
+                  <option>Ventana 1: 09:00–12:00 hrs</option>
+                  <option>Ventana 2: 16:30–19:30 hrs</option>
+                </select>
+              </div>
+
+              <!-- Solo aparece si elige "Recojo en tienda" -->
+              <div id="bloque-tienda" hidden>
+                <label for="sede">¿Dónde recoges?</label>
+                <select id="sede">
+                  <option value="Sede Obrador – Jirón Cusco 248, Huancayo">Sede Obrador – Jirón Cusco 248, Huancayo</option>
+                  <option value="otra">Otra dirección…</option>
+                </select>
+                <div id="campo-otra" hidden>
+                  <label for="otra">Escribe la dirección</label>
+                  <input type="text" id="otra" placeholder="Dirección de recojo" />
+                </div>
+              </div>
+            </article>
+          </form>
+          <article id="confirmacion" class="confirmacion" hidden></article>
+        </section>
+      </main>
+
+      <aside>
+        <article class="resumen-caja">
+          <h1>Resumen</h1>
+          <ul id="resumen" class="canasta"></ul>
+          <div class="fila-total grande"><span>Total a pagar</span><span id="total-pedido">S/. 0.00</span></div>
+          <button type="submit" form="form-pedido">Confirmar pedido</button>
+        </article>
+      </aside>
+    </div>
+    <footer>
+      <article>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZpjRMk6nb4g_q-FqZ8ZmCuSmIipUEqPBIH8in_HyPj3goxflEYs_nTG0m&s=10" alt="ARCHI LOGO" />
+        <h2>archi</h2>
+        <p>Masa madre, fermentación pausada e ingredientes puros.</p>
+      </article>
+      <article>
+        <h2>Horarios de horneo</h2>
+        <p>Martes a Sábado: 07:00–20:00</p>
+        <p>Domingos: 08:30–15:00</p>
+        <p>Lunes: cerrado por descanso de masa</p>
+      </article>
+      <article>
+        <h2>Contacto</h2>
+        <a href="mailto:pedidos@archipanaderia.com">pedidos@archipanaderia.com</a>
+        <p>Teléfono: 996-254-148</p>
+        <p>Jirón Cusco 248, Huancayo 12001</p>
+        <p>&copy; archi Panadería & Pastelería</p>
+      </article>
+    </footer>
+    <script src="js/datos.js"></script>
+    <script src="js/pedido.js"></script>
+  </body>
+</html>

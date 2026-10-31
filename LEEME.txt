@@ -1,0 +1,2 @@
+Pon aquí las fotos de tus panes (imagenPan1.jpg, imagenPan2.jpg, ...).
+En el panel admin escribes solo el nombre del archivo y la foto aparece en la web.

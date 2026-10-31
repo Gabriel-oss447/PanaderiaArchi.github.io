@@ -1,0 +1,28 @@
+/* pedido.css → estilos SOLO del formulario de pedido */
+#form-pedido { display: flex; flex-direction: column; gap: 24px; }
+#form-pedido article { margin: 0; }
+
+/* Fila de cada pan: foto | nombre+precio | cantidad */
+.fila-pan { display: grid; grid-template-columns: 70px 1fr 90px; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--miga); }
+.fila-pan img { width: 70px; height: 70px; object-fit: cover; border-radius: 12px; }
+.fila-pan h5 { font-family: "Fraunces", serif; font-size: 1.05rem; }
+.fila-pan small { color: #7b6552; }
+.fila-pan input { text-align: center; }
+
+/* Botones de radio como "tarjetitas" */
+.opciones { display: flex; flex-wrap: wrap; gap: 12px; }
+.opcion { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 170px; margin: 0; padding: 12px 16px; border: 2px solid var(--miga); border-radius: 14px; cursor: pointer; }
+.opcion input { width: auto; accent-color: var(--corteza); }
+.opcion:has(input:checked) { border-color: var(--trigo); background: #fff6e0; }   /* :has() marca la tarjeta cuyo radio está elegido */
+
+[hidden] { display: none !important; }   /* asegura que "hidden" siempre oculte */
+
+/* Resumen fijo mientras haces scroll */
+.resumen-caja { position: sticky; top: 100px; }
+.resumen-caja button { width: 100%; margin-top: 6px; }
+.canasta { list-style: none; margin: 12px 0; }
+.canasta li { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px dashed var(--miga); }
+.fila-total { display: flex; justify-content: space-between; }
+.fila-total.grande { font-family: "Fraunces", serif; font-size: 1.35rem; margin-bottom: 12px; }
+
+.confirmacion { background: #eef7e6; border-top-color: #5b8c3a !important; }
